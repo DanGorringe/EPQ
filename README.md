@@ -4,3 +4,4 @@ I came across this article:https://research.googleblog.com/2015/06/inceptionism-
 
 Since being unable to compile Caffe I will use a pre made docker container as my starting point to overcome this. the orignial container comes from herval (https://github.com/herval/deepdream-docker).
 
+Have also used code from adilmoujahid's tutorial (https://github.com/adilmoujahid/deeplearning-cats-dogs-tutorial)
