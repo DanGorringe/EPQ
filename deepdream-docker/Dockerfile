@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Herval Freire <hervalfreire@gmail.com>
+MAINTAINER Dan Gorringe <dan.gorringe@hotmail.co.uk>
 
 # General dependencies, lots of them
 RUN apt-get update && apt-get install -y git
@@ -26,14 +26,19 @@ RUN make all
 RUN make pycaffe
 ENV PYTHONPATH=/caffe/python
 
-# Download model
-RUN scripts/download_model_binary.py models/bvlc_googlenet
+## Download model
+#RUN scripts/download_model_binary.py models/bvlc_googlenet
 
 
-VOLUME ["/data"]
+#VOLUME ["/data"]
 
 
 WORKDIR /
-ADD deepdream.py /deepdream.py
+COPY /deeplearning-cats-dogs-tutorial/ /deeplearning-cats-dogs-tutorial/
+#add in adilmoujahid's git repository
+ADD /data/ImageSet/train/ /train/
+#add all images to train into a directory
 
-CMD ["python", "-u", "deepdream.py"]
+#ADD deepdream.py /deepdream.py
+
+#CMD ["python", "-u", "deepdream.py"]
